@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Home</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'atm.jpg' %}" alt="ATM" class="center-image">
+        <div class="top-right-buttons">
+           <button type="button"><a href="{% url 'login' %}">Login</a></button> 
+
+           <button type="button"><a href="{% url 'register' %}">Register</a></button> 
+
+            <button type="button"><a href="{% url 'login' %}">Help</a></button>
+        </div>
+    </div>
+</body>
+</html>

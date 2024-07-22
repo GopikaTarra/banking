@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            background-color: antiquewhite;
+        }
+        .dashboard-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .dashboard-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .button-grid button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .button-grid button:hover {
+            background-color: #45a049;
+        }
+        .button-grid a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>Welcome to Your Dashboard</h2>
+        <div class="button-grid">
+            <button type="button"><a href="{% url 'create_account' %}">Create Account</a></button>
+            <button type="button"><a href="{% url 'withdraw' %}">Withdraw</a></button>
+            <button type="button"><a href="{% url 'deposit' %}">Deposit</a></button>
+            <button type="button"><a href="{% url 'check_balance' %}">Check Balance</a></button>
+            <button type="button"><a href="{% url 'mini_statement' %}">Mini Statement</a></button>
+            <button type="button"><a href="{% url 'deposit' %}">Help</a></button>
+        </div>
+        <br><h3><a href="{% url 'home' %}">Back to HomePage</a></h3>
+    </div>
+</body>
+</html>
